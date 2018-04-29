@@ -1,7 +1,8 @@
 FROM ubuntu 
 USER root
 
-RUN apt-get update && apt-get install -y openjdk-8-jdk curl wget ca-certificates openssl unzip 
+RUN echo "Installing Dependancies"  \
+ && apt-get update && apt-get install -y openjdk-8-jdk curl wget ca-certificates openssl unzip 
 
 CMD ["gradle"]
 
