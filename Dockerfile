@@ -2,7 +2,11 @@ FROM ubuntu
 USER root
 
 RUN echo "Installing Dependancies"  \
- && apt-get update && apt-get install -y openjdk-8-jdk curl wget ca-certificates openssl unzip 
+ && apt-get update && apt-get install -y openjdk-8-jdk curl wget ca-certificates openssl unzip
+
+RUN apt-get clean \
+ && rm -rf /tmp/* /var/tmp/* \
+ && rm -rf /var/lib/apt/lists/* 
 
 CMD ["gradle"]
 
