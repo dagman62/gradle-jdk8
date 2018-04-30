@@ -33,6 +33,7 @@ RUN echo "Downloading Gradle" \
 
 # Create Gradle volume
 USER gradle
+RUN export JAVA_HOME=/usr
 VOLUME "/home/gradle/.gradle"
 WORKDIR /home/gradle
 
